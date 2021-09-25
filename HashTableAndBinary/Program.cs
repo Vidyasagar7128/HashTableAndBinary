@@ -13,11 +13,26 @@ namespace HashTableAndBinary
             hash.Add("2", "or");
             hash.Add("3", "not");
             hash.Add("4", "to");
-            hash.Add("5", "be");
-            string hash5 = hash.Get("5");
-            Console.WriteLine("Fifth index is: {0} ", hash5);
-            string hash2 = hash.Get("2");
-            Console.WriteLine("Second index is: {0} ", hash2);
+            hash.Add("5", "be");List<string> str = new List<string>();
+            string freq = "";
+            int count = 1;
+            for(int i = 0; i <= 5; i++)
+            {
+                str.Add(hash.Get(i.ToString()));
+                Console.WriteLine(str[i]);
+            }
+            for(int i = 0; i < str.Count; i++)
+            {
+                for(int j = 0; j < i; j++)
+                {
+                    if (str[i] == str[j])
+                    {
+                        freq = str[j];
+                        count++;
+                    }
+                }
+            }
+            Console.WriteLine($"{freq} : {count}");
         }
     }
 }
